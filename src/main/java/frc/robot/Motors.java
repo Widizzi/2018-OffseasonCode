@@ -5,20 +5,15 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystems;
+package frc.robot;
 
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
+/**
+ * Add your docs here.
+ */
+public class Motors {
 
-public class ExampleSubsystem extends SubsystemBase {
-  /**
-   * Creates a new ExampleSubsystem.
-   */
-  public ExampleSubsystem() {
+    public Motors() {
+        
+    }
 
-  }
-
-  @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
-  }
 }
