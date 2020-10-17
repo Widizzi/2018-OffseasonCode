@@ -7,19 +7,27 @@
 
 package frc.robot;
 
+import frc.robot.subsystems.CartSubsystem;
+
 /**
  * Add your docs here.
  */
 public class Commands {
 
     public Commands() {
-
-        initialize();
-        
+        initialize();        
     }
 
-    private void initialize() {
+    public CartSubsystem cartSubsystem;
 
+    private void initialize() {
+        configCartCommands();
+    }
+
+    private void configCartCommands() {
+        if(Constants.IS_CART_SUBSYSTEM_IN_USE) {
+            cartSubsystem = new CartSubsystem();
+        }
     }
 
 }

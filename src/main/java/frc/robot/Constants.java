@@ -17,8 +17,27 @@ package frc.robot;
  */
 public final class Constants {
 
+    /* Subsystems */
+    public static final boolean IS_CART_SUBSYSTEM_IN_USE = true;
+
+    /* Motors */
+    public static final int MOTOR_CART_ID = 3;
+
     /* Joysticks */
     public static final int DRIVE_JOYSTICK_ID = 0;
     public static final int CONTROL_JOYSTICK_ID = 1;
+
+    /* Buttons */
+    public static final int CART_DRIVE_TO_LIMIT_BUTTON_ID = 10;
+    public static final int CART_DRIVE_TO_FRONT_BUTTON_ID = 8;
+    public static final int CART_DRIVE_TO_CENTER_BUTTON_ID = 2;
+
+    /* Speeds */
+    public static double MANUAL_CART_SPEED = 0.5;
+    public static double CART_ZEROING_SPEED = 0.4;
+
+    /* Encoder Ticks */
+    public static final int CART_DRIVE_LENGTH = 845790;
+    public static final int CART_CENTER_POSITION = 450000;
 
 }
