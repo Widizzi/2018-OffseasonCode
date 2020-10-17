@@ -7,25 +7,32 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
+
 /**
- * This class is where the bulk of the robot should be declared.  Since Command-based is a
- * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
- * periodic methods (other than the scheduler calls).  Instead, the structure of the robot
- * (including subsystems, commands, and button mappings) should be declared here.
+ * This class is where the bulk of the robot should be declared. Since
+ * Command-based is a "declarative" paradigm, very little robot logic should
+ * actually be handled in the {@link Robot} periodic methods (other than the
+ * scheduler calls). Instead, the structure of the robot (including subsystems,
+ * commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-  // The robot's subsystems and commands are defined here...
+  public static Joystick driveJoystick;
+  public static Joystick controlJoystick;
 
 
-  /**
-   * The container for the robot.  Contains subsystems, OI devices, and commands.
-   */
   public RobotContainer() {
+
     configureJoysticks();
     configureButtonBindings();
+
   }
 
   private void configureJoysticks() {
+
+    driveJoystick = new Joystick(Constants.DRIVE_JOYSTICK_ID);
+    controlJoystick = new Joystick(Constants.CONTROL_JOYSTICK_ID);
+    
   }
   
   private void configureButtonBindings() {
