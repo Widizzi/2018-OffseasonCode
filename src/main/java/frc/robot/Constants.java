@@ -17,8 +17,23 @@ package frc.robot;
  */
 public final class Constants {
 
+    /* Subsystems */
+    public static final boolean IS_GRIPPER_SUBSYSTEM_IN_USE = true;
+
+    /* Motors */
+    public static final int MOTOR_GRIPPER_RIGHT_ID = 1;
+    public static final int MOTOR_GRIPPER_LEFT_ID = 13;
+
     /* Joysticks */
     public static final int DRIVE_JOYSTICK_ID = 0;
     public static final int CONTROL_JOYSTICK_ID = 1;
+
+    /* Buttons */
+    public static final int GRIPPER_FORWARD_BUTTON_ID = 1;
+    public static final int GRIPPER_REVERSE_BUTTON_ID = 2;
+
+    /* Speeds */
+    public static double GRIPPER_FORWARD_SPEED = 0.5;
+    public static double GRIPPER_REVERSE_SPEED = 0.5;
 
 }

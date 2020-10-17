@@ -7,19 +7,39 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj2.command.ConditionalCommand;
+import frc.robot.commands.gripper.GripperForwardCommand;
+import frc.robot.commands.gripper.GripperReverseCommand;
+import frc.robot.commands.gripper.GripperStopCommand;
+import frc.robot.subsystems.GripperSubsystem;
+
 /**
  * Add your docs here.
  */
 public class Commands {
 
     public Commands() {
-
         initialize();
-        
     }
+
+    public static GripperSubsystem gripperSubsystem;
+
+    protected ConditionalCommand gripperForwardConditionalCommand;
+    protected ConditionalCommand gripperReverseConditionalCommand;
 
     private void initialize() {
 
+        configGripperCommands();
+
+    }
+
+    private void configGripperCommands() {
+
+        if (Constants.IS_GRIPPER_SUBSYSTEM_IN_USE) {
+            gripperSubsystem = new GripperSubsystem();
+            gripperForwardConditionalCommand = new ConditionalCommand(new GripperStopCommand(gripperSubsystem), new GripperForwardCommand(gripperSubsystem), gripperSubsystem::isTurningForward);
+            gripperReverseConditionalCommand = new ConditionalCommand(new GripperStopCommand(gripperSubsystem), new GripperReverseCommand(gripperSubsystem), gripperSubsystem::isTurningReverse);
+        }
     }
 
 }
