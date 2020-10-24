@@ -20,6 +20,7 @@ public final class Constants {
     /* Subsystems */
     public static final boolean IS_LIFTING_UNIT_SUBSYSTEM_IN_USE = true;
     public static final boolean IS_GRIPPER_SUBSYSTEM_IN_USE = true;
+    public static final boolean IS_CART_SUBSYSTEM_IN_USE = true;
 
     /* Motors */
     public static final int MOTOR_LIFTING_UNIT_MASTER_ID = 12;
@@ -27,6 +28,8 @@ public final class Constants {
 
     public static final int MOTOR_GRIPPER_RIGHT_ID = 1;
     public static final int MOTOR_GRIPPER_LEFT_ID = 13;
+
+    public static final int MOTOR_CART_ID = 3;
 
     /* Joysticks */
     public static final int DRIVE_JOYSTICK_ID = 0;
@@ -41,12 +44,19 @@ public final class Constants {
     public static final int GRIPPER_FORWARD_BUTTON_ID = 5;
     public static final int GRIPPER_REVERSE_BUTTON_ID = 6;
 
+    public static final int CART_DRIVE_TO_LIMIT_BUTTON_ID = 9;
+    public static final int CART_DRIVE_TO_FRONT_BUTTON_ID = 8;
+    public static final int CART_DRIVE_TO_CENTER_BUTTON_ID = 1;
+
     /* Speeds */
     public static double MANUAL_LIFTING_UNIT_SPEED = 0.2;
     public static double LIFTING_UNIT_ZEROING_SPEED = 0.2;
 
     public static double GRIPPER_FORWARD_SPEED = 0.5;
     public static double GRIPPER_REVERSE_SPEED = 0.5;
+
+    public static double MANUAL_CART_SPEED = 0.5;
+    public static double CART_ZEROING_SPEED = 0.4;
 
     /* Encoder Ticks */
     public static final int LIFTING_UNIT_MAX_VELOCITY_ENCODER_UNITS_PER_100_MS = 4000;
@@ -55,5 +65,8 @@ public final class Constants {
     public static final int LIFTING_UNIT_SCALE_POSITION = 150000;
     public static final int LIFTING_UNIT_SWITCH_POSITION = 60000;
     public static final int LIFTING_UNIT_BASE_POSITION = 5000;
+
+    public static final int CART_DRIVE_LENGTH = 845790;
+    public static final int CART_CENTER_POSITION = 450000;
 
 }

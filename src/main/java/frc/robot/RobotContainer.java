@@ -10,6 +10,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.LiftingUnitSetPositionCommand;
+import frc.robot.commands.CartDriveToLimitCommand;
+import frc.robot.commands.CartSetPositionCommand;
 
 
 /**
@@ -31,6 +33,10 @@ public class RobotContainer extends Commands {
 
   public static JoystickButton gripperForwardButton;
   public static JoystickButton gripperReverseButton;
+
+  public static JoystickButton cartDriveToLimitButton;
+  public static JoystickButton cartDriveToCenter;
+  public static JoystickButton cartDriveToFront;
 
 
   public RobotContainer() {
@@ -68,5 +74,14 @@ public class RobotContainer extends Commands {
       gripperReverseButton.whenPressed(gripperReverseConditionalCommand);
     }
 
+    if(Constants.IS_CART_SUBSYSTEM_IN_USE) {
+      cartDriveToLimitButton = new JoystickButton(controlJoystick, Constants.CART_DRIVE_TO_LIMIT_BUTTON_ID);
+      cartDriveToCenter = new JoystickButton(controlJoystick, Constants.CART_DRIVE_TO_CENTER_BUTTON_ID);
+      cartDriveToFront = new JoystickButton(controlJoystick, Constants.CART_DRIVE_TO_FRONT_BUTTON_ID);
+
+      cartDriveToLimitButton.whenPressed(new CartDriveToLimitCommand(cartSubsystem, Constants.CART_ZEROING_SPEED));
+      cartDriveToCenter.whenPressed(new CartSetPositionCommand(cartSubsystem, Constants.CART_CENTER_POSITION));
+      cartDriveToFront.whenPressed(new CartSetPositionCommand(cartSubsystem, Constants.CART_DRIVE_LENGTH));
+    }
   }
 }
