@@ -29,8 +29,8 @@ public final class Constants {
     public static final int CONTROL_JOYSTICK_ID = 1;
 
     /* Buttons */
-    public static final int GRIPPER_FORWARD_BUTTON_ID = 1;
-    public static final int GRIPPER_REVERSE_BUTTON_ID = 2;
+    public static final int GRIPPER_FORWARD_BUTTON_ID = 5;
+    public static final int GRIPPER_REVERSE_BUTTON_ID = 6;
 
     /* Speeds */
     public static double GRIPPER_FORWARD_SPEED = 0.5;
