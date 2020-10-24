@@ -17,8 +17,31 @@ package frc.robot;
  */
 public final class Constants {
 
+    /* Subsystems */
+    public static final boolean IS_LIFTING_UNIT_SUBSYSTEM_IN_USE = true;
+
+    /* Motors */
+    public static final int MOTOR_LIFTING_UNIT_MASTER_ID = 12;
+    public static final int MOTOR_LIFTING_UNIT_FOLLOWER_ID = 9;
+
     /* Joysticks */
     public static final int DRIVE_JOYSTICK_ID = 0;
     public static final int CONTROL_JOYSTICK_ID = 1;
+
+    /* Buttons */
+    public static final int LIFTING_UNIT_DRIVE_TO_LIMIT_BUTTON_ID = 10;
+    public static final int LIFTING_UNIT_SWITCH_HEIGHT_BUTTON_ID = 8;
+    public static final int LIFTING_UNIT_SCALE_HEIGHT_BUTTON_ID = 2;
+
+    /* Speeds */
+    public static double MANUAL_LIFTING_UNIT_SPEED = 0.2;
+    public static double LIFTING_UNIT_ZEROING_SPEED = 0.2;
+
+    /* Encoder Ticks */
+    public static final int LIFTING_UNIT_MAX_VELOCITY_ENCODER_UNITS_PER_100_MS = 4000;
+
+    public static final int LIFTING_UNIT_DRIVE_LENGTH = 200000;
+    public static final int LIFTING_UNIT_SCALE_POSITION = 110000;
+    public static final int LIFTING_UNIT_SWITCH_POSITION = 60000;
 
 }
