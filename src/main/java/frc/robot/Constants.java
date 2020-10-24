@@ -30,8 +30,9 @@ public final class Constants {
 
     /* Buttons */
     public static final int LIFTING_UNIT_DRIVE_TO_LIMIT_BUTTON_ID = 10;
-    public static final int LIFTING_UNIT_SWITCH_HEIGHT_BUTTON_ID = 8;
-    public static final int LIFTING_UNIT_SCALE_HEIGHT_BUTTON_ID = 2;
+    public static final int LIFTING_UNIT_SWITCH_HEIGHT_BUTTON_ID = 3;
+    public static final int LIFTING_UNIT_SCALE_HEIGHT_BUTTON_ID = 4;
+    public static final int LIFTING_UNIT_BASE_HEIGHT_BUTTON_ID = 2;
 
     /* Speeds */
     public static double MANUAL_LIFTING_UNIT_SPEED = 0.2;
@@ -41,7 +42,8 @@ public final class Constants {
     public static final int LIFTING_UNIT_MAX_VELOCITY_ENCODER_UNITS_PER_100_MS = 4000;
 
     public static final int LIFTING_UNIT_DRIVE_LENGTH = 200000;
-    public static final int LIFTING_UNIT_SCALE_POSITION = 110000;
+    public static final int LIFTING_UNIT_SCALE_POSITION = 150000;
     public static final int LIFTING_UNIT_SWITCH_POSITION = 60000;
+    public static final int LIFTING_UNIT_BASE_POSITION = 5000;
 
 }

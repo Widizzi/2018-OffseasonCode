@@ -24,6 +24,7 @@ public class RobotContainer extends Commands {
 
   public static JoystickButton liftDriveToScaleButton;
   public static JoystickButton liftDriveToSwitchButton;
+  public static JoystickButton liftDriveToBaseButton;
   public static JoystickButton liftDriveToLimitButton;
 
 
@@ -47,9 +48,11 @@ public class RobotContainer extends Commands {
       liftDriveToLimitButton = new JoystickButton(controlJoystick, Constants.LIFTING_UNIT_DRIVE_TO_LIMIT_BUTTON_ID);
       liftDriveToScaleButton = new JoystickButton(controlJoystick, Constants.LIFTING_UNIT_SCALE_HEIGHT_BUTTON_ID);
       liftDriveToSwitchButton = new JoystickButton(controlJoystick, Constants.LIFTING_UNIT_SWITCH_HEIGHT_BUTTON_ID);
+      liftDriveToBaseButton = new JoystickButton(controlJoystick, Constants.LIFTING_UNIT_BASE_HEIGHT_BUTTON_ID);
 
       liftDriveToScaleButton.whenPressed(new LiftingUnitSetPositionCommand(liftingUnitSubsystem, Constants.LIFTING_UNIT_SCALE_POSITION));
       liftDriveToSwitchButton.whenPressed(new LiftingUnitSetPositionCommand(liftingUnitSubsystem, Constants.LIFTING_UNIT_SWITCH_POSITION));
+      liftDriveToBaseButton.whenPressed(new LiftingUnitSetPositionCommand(liftingUnitSubsystem, Constants.LIFTING_UNIT_BASE_POSITION));
     }
 
   }
