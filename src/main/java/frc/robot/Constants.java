@@ -28,9 +28,9 @@ public final class Constants {
     public static final int CONTROL_JOYSTICK_ID = 1;
 
     /* Buttons */
-    public static final int CART_DRIVE_TO_LIMIT_BUTTON_ID = 10;
+    public static final int CART_DRIVE_TO_LIMIT_BUTTON_ID = 9;
     public static final int CART_DRIVE_TO_FRONT_BUTTON_ID = 8;
-    public static final int CART_DRIVE_TO_CENTER_BUTTON_ID = 2;
+    public static final int CART_DRIVE_TO_CENTER_BUTTON_ID = 1;
 
     /* Speeds */
     public static double MANUAL_CART_SPEED = 0.5;
