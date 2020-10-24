@@ -7,19 +7,27 @@
 
 package frc.robot;
 
+import frc.robot.subsystems.LiftingUnitSubsystem;
+
 /**
  * Add your docs here.
  */
 public class Commands {
 
     public Commands() {
-
         initialize();
-        
     }
 
-    private void initialize() {
+    public LiftingUnitSubsystem liftingUnitSubsystem;
 
+    private void initialize() {
+        configLiftingUnitCommands();
+    }
+
+    private void configLiftingUnitCommands() {
+        if(Constants.IS_LIFTING_UNIT_SUBSYSTEM_IN_USE) {
+            liftingUnitSubsystem = new LiftingUnitSubsystem();
+        }
     }
 
 }

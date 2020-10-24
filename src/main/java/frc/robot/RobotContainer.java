@@ -8,6 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.commands.LiftingUnitSetPositionCommand;
 
 /**
  * This class is where the bulk of the robot should be declared. Since
@@ -16,9 +18,14 @@ import edu.wpi.first.wpilibj.Joystick;
  * scheduler calls). Instead, the structure of the robot (including subsystems,
  * commands, and button mappings) should be declared here.
  */
-public class RobotContainer {
+public class RobotContainer extends Commands {
   public static Joystick driveJoystick;
   public static Joystick controlJoystick;
+
+  public static JoystickButton liftDriveToScaleButton;
+  public static JoystickButton liftDriveToSwitchButton;
+  public static JoystickButton liftDriveToBaseButton;
+  public static JoystickButton liftDriveToLimitButton;
 
 
   public RobotContainer() {
@@ -36,5 +43,17 @@ public class RobotContainer {
   }
   
   private void configureButtonBindings() {
+
+    if(Constants.IS_LIFTING_UNIT_SUBSYSTEM_IN_USE) {
+      liftDriveToLimitButton = new JoystickButton(controlJoystick, Constants.LIFTING_UNIT_DRIVE_TO_LIMIT_BUTTON_ID);
+      liftDriveToScaleButton = new JoystickButton(controlJoystick, Constants.LIFTING_UNIT_SCALE_HEIGHT_BUTTON_ID);
+      liftDriveToSwitchButton = new JoystickButton(controlJoystick, Constants.LIFTING_UNIT_SWITCH_HEIGHT_BUTTON_ID);
+      liftDriveToBaseButton = new JoystickButton(controlJoystick, Constants.LIFTING_UNIT_BASE_HEIGHT_BUTTON_ID);
+
+      liftDriveToScaleButton.whenPressed(new LiftingUnitSetPositionCommand(liftingUnitSubsystem, Constants.LIFTING_UNIT_SCALE_POSITION));
+      liftDriveToSwitchButton.whenPressed(new LiftingUnitSetPositionCommand(liftingUnitSubsystem, Constants.LIFTING_UNIT_SWITCH_POSITION));
+      liftDriveToBaseButton.whenPressed(new LiftingUnitSetPositionCommand(liftingUnitSubsystem, Constants.LIFTING_UNIT_BASE_POSITION));
+    }
+
   }
 }
