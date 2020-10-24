@@ -19,10 +19,14 @@ public final class Constants {
 
     /* Subsystems */
     public static final boolean IS_LIFTING_UNIT_SUBSYSTEM_IN_USE = true;
+    public static final boolean IS_GRIPPER_SUBSYSTEM_IN_USE = true;
 
     /* Motors */
     public static final int MOTOR_LIFTING_UNIT_MASTER_ID = 12;
     public static final int MOTOR_LIFTING_UNIT_FOLLOWER_ID = 9;
+
+    public static final int MOTOR_GRIPPER_RIGHT_ID = 1;
+    public static final int MOTOR_GRIPPER_LEFT_ID = 13;
 
     /* Joysticks */
     public static final int DRIVE_JOYSTICK_ID = 0;
@@ -34,9 +38,15 @@ public final class Constants {
     public static final int LIFTING_UNIT_SCALE_HEIGHT_BUTTON_ID = 4;
     public static final int LIFTING_UNIT_BASE_HEIGHT_BUTTON_ID = 2;
 
+    public static final int GRIPPER_FORWARD_BUTTON_ID = 5;
+    public static final int GRIPPER_REVERSE_BUTTON_ID = 6;
+
     /* Speeds */
     public static double MANUAL_LIFTING_UNIT_SPEED = 0.2;
     public static double LIFTING_UNIT_ZEROING_SPEED = 0.2;
+
+    public static double GRIPPER_FORWARD_SPEED = 0.5;
+    public static double GRIPPER_REVERSE_SPEED = 0.5;
 
     /* Encoder Ticks */
     public static final int LIFTING_UNIT_MAX_VELOCITY_ENCODER_UNITS_PER_100_MS = 4000;

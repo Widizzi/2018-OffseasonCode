@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.LiftingUnitSetPositionCommand;
 
+
 /**
  * This class is where the bulk of the robot should be declared. Since
  * Command-based is a "declarative" paradigm, very little robot logic should
@@ -19,6 +20,7 @@ import frc.robot.commands.LiftingUnitSetPositionCommand;
  * commands, and button mappings) should be declared here.
  */
 public class RobotContainer extends Commands {
+
   public static Joystick driveJoystick;
   public static Joystick controlJoystick;
 
@@ -26,6 +28,9 @@ public class RobotContainer extends Commands {
   public static JoystickButton liftDriveToSwitchButton;
   public static JoystickButton liftDriveToBaseButton;
   public static JoystickButton liftDriveToLimitButton;
+
+  public static JoystickButton gripperForwardButton;
+  public static JoystickButton gripperReverseButton;
 
 
   public RobotContainer() {
@@ -53,6 +58,14 @@ public class RobotContainer extends Commands {
       liftDriveToScaleButton.whenPressed(new LiftingUnitSetPositionCommand(liftingUnitSubsystem, Constants.LIFTING_UNIT_SCALE_POSITION));
       liftDriveToSwitchButton.whenPressed(new LiftingUnitSetPositionCommand(liftingUnitSubsystem, Constants.LIFTING_UNIT_SWITCH_POSITION));
       liftDriveToBaseButton.whenPressed(new LiftingUnitSetPositionCommand(liftingUnitSubsystem, Constants.LIFTING_UNIT_BASE_POSITION));
+    }
+
+    if(Constants.IS_GRIPPER_SUBSYSTEM_IN_USE) {
+      gripperForwardButton = new JoystickButton(controlJoystick, Constants.GRIPPER_FORWARD_BUTTON_ID);
+      gripperReverseButton = new JoystickButton(controlJoystick, Constants.GRIPPER_REVERSE_BUTTON_ID);
+
+      gripperForwardButton.whenPressed(gripperForwardConditionalCommand);
+      gripperReverseButton.whenPressed(gripperReverseConditionalCommand);
     }
 
   }
