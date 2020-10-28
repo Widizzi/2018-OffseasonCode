@@ -7,6 +7,9 @@
 
 package frc.robot;
 
+import com.kauailabs.navx.frc.AHRS;
+
+import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
@@ -21,12 +24,22 @@ public class Robot extends TimedRobot {
   private ShuffleBoard shuffleBoard;
   private RobotContainer m_robotContainer;
 
+  public static AHRS ahrs;
+
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
    */
   @Override
   public void robotInit() {
+
+    try {
+      ahrs = new AHRS(SPI.Port.kMXP);
+    } catch (RuntimeException ex) {
+      System.out.println("Error instantiating navX-MXP:  " + ex.getMessage());
+    }
+
+
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     shuffleBoard = new ShuffleBoard();

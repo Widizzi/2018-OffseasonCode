@@ -17,6 +17,22 @@ package frc.robot;
  */
 public final class Constants {
 
+    /* Subsystems */
+    public static final boolean IS_SWERVE_SUBSYSTEM_IN_USE = true;
+
+    /* Motors */
+    public static final int MOTOR_SWERVE_FRONT_RIGHT_VELOCITY_ID = 3;
+    public static final int MOTOR_SWERVE_FRONT_RIGHT_ANGLE_ID = 3;
+
+    public static final int MOTOR_SWERVE_FRONT_LEFT_VELOCITY_ID = 3;
+    public static final int MOTOR_SWERVE_FRONT_LEFT_ANGLE_ID = 3;
+
+    public static final int MOTOR_SWERVE_BACK_RIGHT_VELOCITY_ID = 3;
+    public static final int MOTOR_SWERVE_BACK_RIGHT_ANGLE_ID = 3;
+
+    public static final int MOTOR_SWERVE_BACK_LEFT_VELOCITY_ID = 3;
+    public static final int MOTOR_SWERVE_BACK_LEFT_ANGLE_ID = 3;
+
     /* Joysticks */
     public static final int DRIVE_JOYSTICK_ID = 0;
     public static final int CONTROL_JOYSTICK_ID = 1;

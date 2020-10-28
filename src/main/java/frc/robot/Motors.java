@@ -7,13 +7,33 @@
 
 package frc.robot;
 
+import frc.robot.subsystems.SwerveModule;
+
 /**
  * Add your docs here.
  */
 public class Motors {
 
+    public static SwerveModule swerveModuleFrontRight;
+    public static SwerveModule swerveModuleFrontLeft;
+    public static SwerveModule swerveModuleBackRight;
+    public static SwerveModule swerveModuleBackLeft;
+
     public Motors() {
+        configSwerveMotors();
+    }
+
+    private void configSwerveMotors() {
+
+        if(Constants.IS_SWERVE_SUBSYSTEM_IN_USE) {
+
+            swerveModuleFrontRight = new SwerveModule(Constants.MOTOR_SWERVE_FRONT_RIGHT_VELOCITY_ID, Constants.MOTOR_SWERVE_FRONT_RIGHT_ANGLE_ID);
+            swerveModuleFrontRight = new SwerveModule(Constants.MOTOR_SWERVE_FRONT_LEFT_VELOCITY_ID, Constants.MOTOR_SWERVE_FRONT_LEFT_ANGLE_ID);
+            swerveModuleFrontRight = new SwerveModule(Constants.MOTOR_SWERVE_BACK_RIGHT_VELOCITY_ID, Constants.MOTOR_SWERVE_BACK_RIGHT_ANGLE_ID);
+            swerveModuleFrontRight = new SwerveModule(Constants.MOTOR_SWERVE_BACK_LEFT_VELOCITY_ID, Constants.MOTOR_SWERVE_BACK_LEFT_ANGLE_ID);
         
+        }
+
     }
 
 }

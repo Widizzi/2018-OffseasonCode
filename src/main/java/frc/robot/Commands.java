@@ -7,19 +7,30 @@
 
 package frc.robot;
 
+import frc.robot.commands.SwerveDriveCommand;
+import frc.robot.subsystems.SwerveSubsystem;
+
 /**
  * Add your docs here.
  */
 public class Commands {
 
     public Commands() {
-
         initialize();
-        
     }
 
-    private void initialize() {
+    public SwerveSubsystem swerveSubsystem;
 
+    private void initialize() {
+        configSwerveCommands();
+    }
+
+    private void configSwerveCommands() {
+        if(Constants.IS_SWERVE_SUBSYSTEM_IN_USE) {
+            swerveSubsystem = new SwerveSubsystem();
+
+            swerveSubsystem.setDefaultCommand(new SwerveDriveCommand(swerveSubsystem));
+        }
     }
 
 }
